@@ -22,10 +22,12 @@ export type Color = {
   __typename?: 'Color';
   displayName: Scalars['String']['output'];
   id: Scalars['ID']['output'];
+  image: Scalars['String']['output'];
 };
 
 export type Product = {
   __typename?: 'Product';
+  category: Category;
   colors: Array<Color>;
   description: Scalars['String']['output'];
   id: Scalars['ID']['output'];

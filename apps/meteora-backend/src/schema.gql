@@ -21,6 +21,7 @@ type Size {
 type Color {
   id: ID!
   displayName: String!
+  image: String!
 }
 
 type Product {
@@ -30,6 +31,7 @@ type Product {
   price: Float!
   image: String!
   seller: Seller!
+  category: Category!
   sizes: [Size!]!
   colors: [Color!]!
 }

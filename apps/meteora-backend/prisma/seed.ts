@@ -12,6 +12,7 @@ interface Product {
   colors: Array<{
     id: string;
     displayName: string;
+    image?: string;
   }>;
   sizes: Array<{
     id: string;
@@ -22,18 +23,18 @@ interface Product {
 
 const bolsas: Product[] = [
   {
-    name: 'Bolsa Casual',
-    description: 'Bolsa prática e estilosa, ideal para o dia a dia.',
+    name: 'Bolsa Coringa',
+    description:
+      'Bolsa camel em couro sintético de alta duração. Ideal para acompanhar você por uma vida!',
     price: 120.0,
     seller: 'Riachuelo',
     colors: [
-      { id: 'black', displayName: 'Preto' },
-      { id: 'beige', displayName: 'Bege' },
-      { id: 'brown', displayName: 'Marrom' },
+      { id: 'camel', displayName: 'Camel', image: '/destaques/bolsa-coringa-camel.jpg' },
+      { id: 'black', displayName: 'Preta', image: '/destaques/bolsa-coringa-preta.png' },
+      { id: 'blue', displayName: 'Azul', image: '/destaques/bolsa-coringa-azul.png' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/bolsa-1.png',
+    image: '/destaques/bolsa-coringa-camel.jpg',
   },
   {
     name: 'Bolsa Tote',
@@ -118,13 +119,14 @@ const bolsas: Product[] = [
 
 const calcas: Product[] = [
   {
-    name: 'Calça Jeans Skinny',
-    description: 'Modelo ajustado com elastano para máximo conforto.',
-    price: 200.0,
+    name: 'Calça Alfaiataria',
+    description: 'Modelo Wide Leg alfaiataria em linho. Uma peça pra vida toda!',
+    price: 180.0,
     seller: 'Renner',
     colors: [
-      { id: 'light-blue', displayName: 'Azul Claro' },
-      { id: 'dark-blue', displayName: 'Azul Escuro' },
+      { id: 'beige', displayName: 'Bege', image: '/destaques/calca-alfaiataria-bege.jpg' },
+      { id: 'red', displayName: 'Vermelha', image: '/destaques/calca-alfaiataria-vermelha.png' },
+      { id: 'blue', displayName: 'Azul', image: '/destaques/calca-alfaiataria-azul.png' },
     ],
     sizes: [
       { id: '36', displayName: '36' },
@@ -133,8 +135,7 @@ const calcas: Product[] = [
       { id: '42', displayName: '42' },
       { id: '44', displayName: '44' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/calca-1.png',
+    image: '/destaques/calca-alfaiataria-bege.jpg',
   },
   {
     name: 'Calça Reta',
@@ -254,14 +255,15 @@ const calcas: Product[] = [
 
 const camisetas: Product[] = [
   {
-    name: 'Camiseta Básica',
-    description: 'Camiseta 100% algodão, confortável e leve.',
-    price: 50.0,
+    name: 'Camiseta Conforto',
+    description:
+      'Multicores e tamanhos. Tecido de algodão 100%, fresquinho para o verão. Modelagem unissex.',
+    price: 70.0,
     seller: 'C&A',
     colors: [
-      { id: 'white', displayName: 'Branco' },
-      { id: 'black', displayName: 'Preto' },
-      { id: 'gray', displayName: 'Cinza' },
+      { id: 'white', displayName: 'Branca', image: '/destaques/camiseta-conforto-branca.jpg' },
+      { id: 'green', displayName: 'Verde', image: '/destaques/camiseta-conforto-verde.png' },
+      { id: 'brown', displayName: 'Marrom', image: '/destaques/camiseta-conforto-marrom.png' },
     ],
     sizes: [
       { id: 'p', displayName: 'P' },
@@ -269,8 +271,7 @@ const camisetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/camiseta-1.png',
+    image: '/destaques/camiseta-conforto-branca.jpg',
   },
   {
     name: 'Camiseta Estampada',
@@ -392,18 +393,18 @@ const jaquetas: Product[] = [
     price: 150.0,
     seller: 'Riachuelo',
     colors: [
-      { id: 'light-blue', displayName: 'Azul Claro' },
-      { id: 'offwhite', displayName: 'Offwhite' },
-      { id: 'black', displayName: 'Preto' },
+      { id: 'denim', displayName: 'Jeans', image: '/destaques/jaqueta-jeans-jeans.jpg' },
+      { id: 'gray', displayName: 'Cinza', image: '/destaques/jaqueta-jeans-cinza.png' },
+      { id: 'black', displayName: 'Preta', image: '/destaques/jaqueta-jeans-preta.png' },
     ],
     sizes: [
+      { id: 'pp', displayName: 'PP' },
       { id: 'p', displayName: 'P' },
       { id: 'm', displayName: 'M' },
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/jaqueta-1.png',
+    image: '/destaques/jaqueta-jeans-jeans.jpg',
   },
   {
     name: 'Jaqueta de Couro',
@@ -518,20 +519,20 @@ const jaquetas: Product[] = [
 
 const oculos: Product[] = [
   {
-    name: 'Óculos Aviador',
-    description: 'Clássico modelo aviador com lentes polarizadas.',
-    price: 150.0,
-    seller: 'Óticas Carol',
+    name: 'Óculos Redondo',
+    description: 'Armação metálica em grafite com lentes arredondadas. Sem erro!',
+    price: 120.0,
+    seller: 'Chilli Beans',
     colors: [
-      { id: 'gold', displayName: 'Dourado' },
-      { id: 'black', displayName: 'Preto' },
+      { id: 'graphite', displayName: 'Grafite', image: '/destaques/oculos-redondo-grafite.jpg' },
+      { id: 'black', displayName: 'Preto', image: '/destaques/oculos-redondo-preto.png' },
+      { id: 'casual', displayName: 'Casual', image: '/destaques/oculos-redondo-casual.png' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/oculos-1.png',
+    image: '/destaques/oculos-redondo-grafite.jpg',
   },
   {
-    name: 'Óculos Redondo',
+    name: 'Óculos Redondo Metal',
     description: 'Modelo redondo retrô com armação de metal leve.',
     price: 120.0,
     seller: 'Chilli Beans',
@@ -613,13 +614,15 @@ const oculos: Product[] = [
 
 const tenis = [
   {
-    name: 'Tênis Esportivo',
-    description: 'Tênis com amortecimento ideal para caminhadas e corridas.',
-    price: 300.0,
+    name: 'Tênis Chunky',
+    description:
+      'Snicker casual com solado mais alto e modelagem robusta. Modelo unissex.',
+    price: 250.0,
     seller: 'Adidas',
     colors: [
-      { id: 'blue', displayName: 'Azul' },
-      { id: 'gray', displayName: 'Cinza' },
+      { id: 'white', displayName: 'Branco', image: '/destaques/tenis-chunky-branco.jpg' },
+      { id: 'yellow', displayName: 'Amarelo', image: '/destaques/tenis-chunky-amarelo.png' },
+      { id: 'red', displayName: 'Vermelho', image: '/destaques/tenis-chunky-vermelho.png' },
     ],
     sizes: [
       { id: '37', displayName: '37' },
@@ -629,8 +632,7 @@ const tenis = [
       { id: '41', displayName: '41' },
       { id: '42', displayName: '42' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/tenis.png',
+    image: '/destaques/tenis-chunky-branco.jpg',
   },
 ];
 
@@ -730,6 +732,7 @@ async function main() {
           data: {
             productId: createdProduct.id,
             colorId: createdColor.id,
+            image: color.image ?? product.image,
           },
         });
       }

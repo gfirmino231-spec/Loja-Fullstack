@@ -14,6 +14,7 @@ export class ProductService {
       take: limit,
       include: {
         seller: true,
+        category: true,
       },
     });
   }
@@ -31,6 +32,9 @@ export class ProductService {
       where: { productId },
       include: { color: true },
     });
-    return productColors.map((productColor) => productColor.color);
+    return productColors.map((productColor) => ({
+      ...productColor.color,
+      image: productColor.image,
+    }));
   }
 }

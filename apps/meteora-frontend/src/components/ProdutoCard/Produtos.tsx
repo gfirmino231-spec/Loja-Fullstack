@@ -7,17 +7,25 @@ import './Produtos.css'
 function Produtos(){
     const { data } = useQuery<{ products: Product[] }>(GET_PRODUCTS);
 
+    const destaques: Product[] = [];
+    const categoriasVistas = new Set<string>();
+    for (const produto of data?.products ?? []) {
+        if (categoriasVistas.has(produto.category.id)) continue;
+        categoriasVistas.add(produto.category.id);
+        destaques.push(produto);
+    }
+
     return (
         <section className="secao-produtos">
             <h2 className="Titulo-Produto">Produtos que estão bombando!</h2>
-            {data?.products.map((produto)=>(
+            {destaques.map((produto)=>(
                 <ProdutoCard
                 key={produto.id}
                 nome = {produto.name}
                 valor={produto.price}
                 imagem={produto.image}
                 descricao={produto.description}
-                cores={produto.colors.map((cor) => ({ cor: cor.displayName, imagem: produto.image }))}
+                cores={produto.colors.map((cor) => ({ cor: cor.displayName, imagem: cor.image }))}
                 tamanhos={produto.sizes.map((tamanho) => tamanho.displayName)}
                 />
            ))}

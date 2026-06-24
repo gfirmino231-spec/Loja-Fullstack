@@ -2,6 +2,7 @@ import { ObjectType, Field, ID } from '@nestjs/graphql';
 import { Seller } from './seller.model';
 import { Size } from './size.model';
 import { Color } from './color.model';
+import { Category } from '../../category/models/category.model';
 
 @ObjectType()
 export class Product {
@@ -22,6 +23,9 @@ export class Product {
 
   @Field(() => Seller)
   seller: Seller;
+
+  @Field(() => Category)
+  category: Category;
 
   @Field(() => [Size])
   sizes?: Size[];

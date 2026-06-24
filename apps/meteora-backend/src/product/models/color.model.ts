@@ -7,4 +7,7 @@ export class Color {
 
   @Field()
   displayName: string;
+
+  @Field()
+  image: string;
 }
