@@ -1,0 +1,16 @@
+.Imagem-Produto{
+    background-color: #DAFF01;
+    width: 160px;
+    height: 157px;
+    object-fit: contain;
+    display: block;
+}
+.Nome-Produto{
+        width: 160px;
+        height: 35px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        margin: 0;
+        padding: 8px 0;
+}

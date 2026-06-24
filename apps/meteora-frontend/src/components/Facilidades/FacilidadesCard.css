@@ -1,0 +1,26 @@
+.container-infos{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 16px;
+    
+}
+
+.secao-infos-texto{
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.info-descricao{
+    color: white;
+    margin-top: 16px;
+    text-align: left;
+    max-width: 190px;
+}
+
+.info-nome{
+    color: #DAFF01;
+}

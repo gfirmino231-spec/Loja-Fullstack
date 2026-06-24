@@ -1,0 +1,42 @@
+.img-produto {
+    width: 100%;
+    height: 422px;
+    object-fit: cover;
+    ;
+}
+
+.card-produto {
+    width: 350px;
+    border: 1px solid #ccc;
+
+}
+
+.card-conteudo {
+    padding: 16px
+}
+
+.nome-produto {
+    color: #212529;
+    margin-bottom: 10px;
+
+
+}
+
+.descricao-produto {
+    color: #212529;
+    margin-bottom: 16px;
+}
+
+.valor-produto {
+    color: #212529;
+    margin-bottom: 10px;
+
+}
+
+.botao-produto {
+    width: 102px;
+    height: 37px;
+    color: white;
+    background-color: #9353FF;
+    border: none;
+}

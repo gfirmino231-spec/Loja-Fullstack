@@ -1,0 +1,28 @@
+.img-hero{
+    width: 100%;
+}
+.container-hero{
+    position: relative;
+}
+.button-seta-direita{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+
+}
+.button-seta-esquerda{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%)
+
+}
+.button-seta-direita, .button-seta-esquerda {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,160 @@
+.auth-overlay {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 24px;
+}
+
+.auth-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    width: 420px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.auth-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    background-color: #000000;
+}
+
+.auth-header-titulo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: white;
+}
+
+.auth-icone {
+    width: 18px;
+    height: 18px;
+    color: #D4FF4F;
+}
+
+.auth-fechar {
+    width: 18px;
+    height: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.auth-conteudo {
+    padding: 24px 28px 28px;
+}
+
+.auth-conteudo h2 {
+    font-size: 20px;
+    color: #212529;
+    margin-bottom: 4px;
+}
+
+.auth-subtitulo {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.auth-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.auth-campo label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #212529;
+}
+
+.auth-campo input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #212529;
+}
+
+.auth-campo input:focus {
+    outline: none;
+    border-color: #9353FF;
+}
+
+.auth-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.auth-input-wrapper input {
+    padding-right: 40px;
+}
+
+.auth-olho {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 0;
+}
+
+.auth-olho svg {
+    width: 18px;
+    height: 18px;
+}
+
+.auth-erro {
+    color: #C0392B;
+    font-size: 13px;
+    margin: -4px 0 16px;
+}
+
+.auth-botao {
+    width: 100%;
+    background-color: #9353FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-botao:hover {
+    background-color: #7c3ce0;
+}
+
+.auth-divisor {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 20px 0 16px;
+}
+
+.auth-rodape {
+    text-align: center;
+    font-size: 14px;
+    color: #212529;
+}
+
+.auth-rodape a {
+    color: #212529;
+    font-weight: 600;
+    text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+.secao-produtos{
+display: grid;
+grid-template-columns: repeat(3,350px);
+gap: 30px;
+justify-content: center;
+}
+.Titulo-Produto{
+     text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    height: 39px;
+    color: #212529;
+    grid-column: 1/-1;
+
+}

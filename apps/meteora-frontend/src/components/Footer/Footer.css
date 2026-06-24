@@ -1,0 +1,15 @@
+.secao-footer{
+    height: 54px;
+    width: 100%;
+    background-color: #000;
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo-footer{
+    color: white;
+    text-align: center;
+    
+    
+}
