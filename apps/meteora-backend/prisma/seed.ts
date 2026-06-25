@@ -46,8 +46,7 @@ const bolsas: Product[] = [
       { id: 'navy', displayName: 'Azul Marinho' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/bolsa-2.png',
+    image: '/produtos/bolsa-tote.png',
   },
   {
     name: 'Bolsa de Ombro',
@@ -59,8 +58,7 @@ const bolsas: Product[] = [
       { id: 'red', displayName: 'Vermelho' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/bolsa-3.png',
+    image: '/produtos/bolsa-de-ombro.png',
   },
   {
     name: 'Bolsa Mochila',
@@ -72,8 +70,7 @@ const bolsas: Product[] = [
       { id: 'green', displayName: 'Verde' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/bolsa-4.png',
+    image: '/produtos/bolsa-mochila.png',
   },
   {
     name: 'Bolsa de Viagem',
@@ -85,8 +82,7 @@ const bolsas: Product[] = [
       { id: 'black', displayName: 'Preto' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/bolsa-5.png',
+    image: '/produtos/bolsa-de-viagem.png',
   },
   {
     name: 'Bolsa Transversal',
@@ -99,8 +95,7 @@ const bolsas: Product[] = [
       { id: 'black', displayName: 'Preto' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/bolsa-6.png',
+    image: '/produtos/bolsa-transversal.png',
   },
   {
     name: 'Bolsa Pequena',
@@ -112,8 +107,7 @@ const bolsas: Product[] = [
       { id: 'pink', displayName: 'Rosa' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/bolsa-7.png',
+    image: '/produtos/bolsa-pequena.png',
   },
 ];
 
@@ -153,8 +147,7 @@ const calcas: Product[] = [
       { id: '42', displayName: '42' },
       { id: '44', displayName: '44' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/calca-2.png',
+    image: '/produtos/calca-reta.png',
   },
   {
     name: 'Calça Jogger',
@@ -172,8 +165,7 @@ const calcas: Product[] = [
       { id: '42', displayName: '42' },
       { id: '44', displayName: '44' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/calca-3.png',
+    image: '/produtos/calca-jogger.png',
   },
   {
     name: 'Calça Pantalona',
@@ -191,8 +183,7 @@ const calcas: Product[] = [
       { id: '42', displayName: '42' },
       { id: '44', displayName: '44' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/calca-4.png',
+    image: '/produtos/calca-pantalona.png',
   },
   {
     name: 'Calça Social',
@@ -210,8 +201,7 @@ const calcas: Product[] = [
       { id: '42', displayName: '42' },
       { id: '44', displayName: '44' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/calca-5.png',
+    image: '/produtos/calca-social.png',
   },
   {
     name: 'Calça Cargo',
@@ -229,8 +219,7 @@ const calcas: Product[] = [
       { id: '42', displayName: '42' },
       { id: '44', displayName: '44' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/calca-6.png',
+    image: '/produtos/calca-cargo.png',
   },
   {
     name: 'Calça Flare',
@@ -248,8 +237,7 @@ const calcas: Product[] = [
       { id: '42', displayName: '42' },
       { id: '44', displayName: '44' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/calca-7.png',
+    image: '/produtos/calca-flare.png',
   },
 ];
 
@@ -289,8 +277,7 @@ const camisetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/camiseta-2.png',
+    image: '/produtos/camiseta-estampada.png',
   },
   {
     name: 'Camiseta Oversized',
@@ -308,8 +295,7 @@ const camisetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/camiseta-3.png',
+    image: '/produtos/camiseta-oversized.png',
   },
   {
     name: 'Camiseta Slim Fit',
@@ -326,8 +312,7 @@ const camisetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/camiseta-4.png',
+    image: '/produtos/camiseta-slim-fit.png',
   },
   {
     name: 'Camiseta com Bolso',
@@ -344,8 +329,7 @@ const camisetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/camiseta-5.png',
+    image: '/produtos/camiseta-com-bolso.png',
   },
   {
     name: 'Camiseta Longline',
@@ -362,8 +346,7 @@ const camisetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/camiseta-6.png',
+    image: '/produtos/camiseta-longline.png',
   },
   {
     name: 'Camiseta Polo',
@@ -380,8 +363,7 @@ const camisetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/camiseta-7.png',
+    image: '/produtos/camiseta-polo.png',
   },
 ];
 
@@ -421,8 +403,7 @@ const jaquetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/jaqueta-2.png',
+    image: '/produtos/jaqueta-de-couro.png',
   },
   {
     name: 'Jaqueta Bomber',
@@ -439,8 +420,7 @@ const jaquetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/jaqueta-3.png',
+    image: '/produtos/jaqueta-bomber.png',
   },
   {
     name: 'Jaqueta de Nylon',
@@ -457,8 +437,7 @@ const jaquetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/jaqueta-4.png',
+    image: '/produtos/jaqueta-de-nylon.png',
   },
   {
     name: 'Jaqueta Parka',
@@ -475,8 +454,7 @@ const jaquetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/jaqueta-5.png',
+    image: '/produtos/jaqueta-parka.png',
   },
   {
     name: 'Jaqueta Puffer',
@@ -493,8 +471,7 @@ const jaquetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/jaqueta-6.png',
+    image: '/produtos/jaqueta-puffer.png',
   },
   {
     name: 'Jaqueta Esportiva',
@@ -512,8 +489,7 @@ const jaquetas: Product[] = [
       { id: 'g', displayName: 'G' },
       { id: 'gg', displayName: 'GG' },
     ],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/jaqueta-7.png',
+    image: '/produtos/jaqueta-esportiva.png',
   },
 ];
 
@@ -541,8 +517,7 @@ const oculos: Product[] = [
       { id: 'black', displayName: 'Preto' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/oculos-2.png',
+    image: '/produtos/oculos-redondo-metal.png',
   },
   {
     name: 'Óculos Esportivo',
@@ -555,8 +530,7 @@ const oculos: Product[] = [
       { id: 'blue', displayName: 'Azul' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/oculos-3.png',
+    image: '/produtos/oculos-esportivo.png',
   },
   {
     name: 'Óculos Wayfarer',
@@ -568,8 +542,7 @@ const oculos: Product[] = [
       { id: 'tortoise', displayName: 'Tartaruga' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/oculos-4.png',
+    image: '/produtos/oculos-wayfarer.png',
   },
   {
     name: 'Óculos de Sol Cat Eye',
@@ -581,8 +554,7 @@ const oculos: Product[] = [
       { id: 'black', displayName: 'Preto' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/oculos-5.png',
+    image: '/produtos/oculos-de-sol-cat-eye.png',
   },
   {
     name: 'Óculos Clubmaster',
@@ -594,8 +566,7 @@ const oculos: Product[] = [
       { id: 'gold', displayName: 'Dourado' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/oculos-6.png',
+    image: '/produtos/oculos-clubmaster.png',
   },
   {
     name: 'Óculos Retrô',
@@ -607,8 +578,7 @@ const oculos: Product[] = [
       { id: 'black', displayName: 'Preto' },
     ],
     sizes: [{ id: 'unique', displayName: 'Único' }],
-    image:
-      'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/oculos-7.png',
+    image: '/produtos/oculos-retro.png',
   },
 ];
 
@@ -640,32 +610,32 @@ const categories = [
   {
     id: 'camisetas',
     displayName: 'Camisetas',
-    icon: 'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/categories/camiseta.png',
+    icon: '/categorias/camisetas.png',
   },
   {
     id: 'bolsas',
     displayName: 'Bolsas',
-    icon: 'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/categories/bolsa.png',
+    icon: '/categorias/bolsas.png',
   },
   {
     id: 'calcados',
     displayName: 'Calçados',
-    icon: 'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/categories/calcados.png',
+    icon: '/categorias/calcados.png',
   },
   {
     id: 'calcas',
     displayName: 'Calças',
-    icon: 'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/categories/calca.png',
+    icon: '/categorias/calcas.png',
   },
   {
     id: 'casacos',
     displayName: 'Casacos',
-    icon: 'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/categories/casacos.png',
+    icon: '/categorias/casacos.png',
   },
   {
     id: 'oculos',
     displayName: 'Óculos',
-    icon: 'https://raw.githubusercontent.com/viniciosneves/meteora-assets/refs/heads/main/categories/oculos.png',
+    icon: '/categorias/oculos.png',
   },
 ];
 
