@@ -9,8 +9,8 @@ interface ProdutoCardProps {
     imagem: string,
     valor: number,
     descricao: string,
-    cores: { id: string, cor: string, imagem: string }[]
-    tamanhos: { id: string, tamanho: string }[]
+    cores: { id: string, cor: string, imagem: string, estoque: number }[]
+    tamanhos: { id: string, tamanho: string, estoque: number }[]
 }
 
 function ProdutoCard({ id, nome, imagem, valor, descricao, cores, tamanhos }: ProdutoCardProps) {

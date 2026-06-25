@@ -16,12 +16,14 @@ type Seller {
 type Size {
   id: ID!
   displayName: String!
+  stock: Int!
 }
 
 type Color {
   id: ID!
   displayName: String!
   image: String!
+  stock: Int!
 }
 
 type Product {

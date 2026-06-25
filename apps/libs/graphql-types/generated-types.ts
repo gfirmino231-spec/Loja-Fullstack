@@ -23,6 +23,38 @@ export type Color = {
   displayName: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   image: Scalars['String']['output'];
+  stock: Scalars['Int']['output'];
+};
+
+export type ItemCompraInput = {
+  colorId: Scalars['Int']['input'];
+  productId: Scalars['Int']['input'];
+  quantidade: Scalars['Int']['input'];
+  sizeId: Scalars['Int']['input'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  finalizarCompra: Scalars['Boolean']['output'];
+  login: User;
+  register: User;
+};
+
+
+export type MutationFinalizarCompraArgs = {
+  itens: Array<ItemCompraInput>;
+};
+
+
+export type MutationLoginArgs = {
+  email: Scalars['String']['input'];
+  password: Scalars['String']['input'];
+};
+
+
+export type MutationRegisterArgs = {
+  email: Scalars['String']['input'];
+  password: Scalars['String']['input'];
 };
 
 export type Product = {
@@ -59,5 +91,12 @@ export type Seller = {
 export type Size = {
   __typename?: 'Size';
   displayName: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  stock: Scalars['Int']['output'];
+};
+
+export type User = {
+  __typename?: 'User';
+  email: Scalars['String']['output'];
   id: Scalars['ID']['output'];
 };

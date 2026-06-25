@@ -8,11 +8,13 @@ interface Cor {
     id: string
     cor: string
     imagem: string
+    estoque: number
 }
 
 interface Tamanho {
     id: string
     tamanho: string
+    estoque: number
 }
 
 interface ModalProps {
@@ -49,18 +51,31 @@ function corParaHex(nome: string): string {
 }
 
 function Modal({ id, nome, imagem, valor, descricao, cores, tamanhos, onFechar }: ModalProps) {
-    const [corSelecionada, setCorSelecionada] = useState(0)
+    const [corSelecionada, setCorSelecionada] = useState(() => {
+        const indiceDisponivel = cores.findIndex((item) => item.estoque > 0)
+        return indiceDisponivel === -1 ? 0 : indiceDisponivel
+    })
     const [tamanhoSelecionadoId, setTamanhoSelecionadoId] = useState('')
     const [erro, setErro] = useState('')
     const { adicionarItem } = useCart()
 
     function lidarComAdicionarSacola() {
+        if (cores[corSelecionada].estoque <= 0) {
+            setErro('Essa cor está esgotada.')
+            return
+        }
+
         if (!tamanhoSelecionadoId) {
             setErro('Selecione um tamanho antes de adicionar à sacola.')
             return
         }
 
         const tamanhoEscolhido = tamanhos.find((item) => item.id === tamanhoSelecionadoId)!
+
+        if (tamanhoEscolhido.estoque <= 0) {
+            setErro('Esse tamanho está esgotado.')
+            return
+        }
 
         adicionarItem({
             produtoId: id,
@@ -105,12 +120,16 @@ function Modal({ id, nome, imagem, valor, descricao, cores, tamanhos, onFechar }
                                 {cores.map((item, index) => (
                                     <button
                                         key={item.cor}
-                                        className={`cor-opcao ${corSelecionada === index ? 'selecionada' : ''}`}
-                                        onClick={() => setCorSelecionada(index)}
-                                        title={item.cor}
+                                        className={`cor-opcao ${corSelecionada === index ? 'selecionada' : ''} ${item.estoque <= 0 ? 'indisponivel' : ''}`}
+                                        onClick={() => {
+                                            setCorSelecionada(index)
+                                            setErro('')
+                                        }}
+                                        disabled={item.estoque <= 0}
+                                        title={item.estoque <= 0 ? `${item.cor} (esgotado)` : item.cor}
                                     >
                                         <span className='bolinha' style={{ backgroundColor: corParaHex(item.cor) }} />
-                                        <span className='cor-nome'>{item.cor}</span>
+                                        <span className='cor-nome'>{item.cor}{item.estoque <= 0 ? ' (esgotado)' : ''}</span>
                                     </button>
                                 ))}
                             </div>
@@ -121,11 +140,13 @@ function Modal({ id, nome, imagem, valor, descricao, cores, tamanhos, onFechar }
                                 {tamanhos.map((item) => (
                                     <button
                                         key={item.id}
-                                        className={`tamanho-btn ${tamanhoSelecionadoId === item.id ? 'selecionado' : ''}`}
+                                        className={`tamanho-btn ${tamanhoSelecionadoId === item.id ? 'selecionado' : ''} ${item.estoque <= 0 ? 'indisponivel' : ''}`}
                                         onClick={() => {
                                             setTamanhoSelecionadoId(item.id)
                                             setErro('')
                                         }}
+                                        disabled={item.estoque <= 0}
+                                        title={item.estoque <= 0 ? `${item.tamanho} (esgotado)` : item.tamanho}
                                     >
                                         {item.tamanho}
                                     </button>

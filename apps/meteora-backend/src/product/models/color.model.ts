@@ -1,4 +1,4 @@
-import { ObjectType, Field, ID } from '@nestjs/graphql';
+import { ObjectType, Field, ID, Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class Color {
@@ -10,4 +10,7 @@ export class Color {
 
   @Field()
   image: string;
+
+  @Field(() => Int)
+  stock: number;
 }

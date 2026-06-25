@@ -26,8 +26,8 @@ function Produtos(){
                 valor={produto.price}
                 imagem={produto.image}
                 descricao={produto.description}
-                cores={produto.colors.map((cor) => ({ id: cor.id, cor: cor.displayName, imagem: cor.image }))}
-                tamanhos={produto.sizes.map((tamanho) => ({ id: tamanho.id, tamanho: tamanho.displayName }))}
+                cores={produto.colors.map((cor) => ({ id: cor.id, cor: cor.displayName, imagem: cor.image, estoque: cor.stock }))}
+                tamanhos={produto.sizes.map((tamanho) => ({ id: tamanho.id, tamanho: tamanho.displayName, estoque: tamanho.stock }))}
                 />
            ))}
         </section>

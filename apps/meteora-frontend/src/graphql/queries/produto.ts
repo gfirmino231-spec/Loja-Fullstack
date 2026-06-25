@@ -16,10 +16,12 @@ export const GET_PRODUCTS = gql`
         id
         displayName
         image
+        stock
       }
       sizes {
         id
         displayName
+        stock
       }
     }
   }

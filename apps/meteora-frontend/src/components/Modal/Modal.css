@@ -147,6 +147,26 @@
     color: #6b7280;
 }
 
+.cor-opcao.indisponivel {
+    cursor: not-allowed;
+    opacity: 0.45;
+}
+
+.cor-opcao.indisponivel .bolinha {
+    position: relative;
+}
+
+.cor-opcao.indisponivel .bolinha::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    right: -2px;
+    height: 1px;
+    background-color: #C0392B;
+    transform: rotate(-45deg);
+}
+
 .tamanho-btn {
     width: 32px;
     height: 32px;
@@ -165,6 +185,13 @@
     background-color: #9353FF;
     border-color: #9353FF;
     color: white;
+}
+
+.tamanho-btn.indisponivel {
+    cursor: not-allowed;
+    opacity: 0.45;
+    text-decoration: line-through;
+    background-color: #f3f4f6;
 }
 
 .Modal-erro {

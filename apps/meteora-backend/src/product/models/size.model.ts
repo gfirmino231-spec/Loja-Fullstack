@@ -1,4 +1,4 @@
-import { ObjectType, Field, ID } from '@nestjs/graphql';
+import { ObjectType, Field, ID, Int } from '@nestjs/graphql';
 
 @ObjectType()
 export class Size {
@@ -7,4 +7,7 @@ export class Size {
 
   @Field()
   displayName: string;
+
+  @Field(() => Int)
+  stock: number;
 }

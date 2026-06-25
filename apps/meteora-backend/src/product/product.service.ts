@@ -25,7 +25,10 @@ export class ProductService {
       include: { size: true },
       orderBy: { id: 'asc' },
     });
-    return productSizes.map((productSize) => productSize.size);
+    return productSizes.map((productSize) => ({
+      ...productSize.size,
+      stock: productSize.stock,
+    }));
   }
 
   async getColors(productId: number): Promise<Color[]> {
@@ -37,6 +40,7 @@ export class ProductService {
     return productColors.map((productColor) => ({
       ...productColor.color,
       image: productColor.image,
+      stock: productColor.stock,
     }));
   }
 }
