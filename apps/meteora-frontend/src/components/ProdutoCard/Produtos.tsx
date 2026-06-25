@@ -21,12 +21,13 @@ function Produtos(){
             {destaques.map((produto)=>(
                 <ProdutoCard
                 key={produto.id}
+                id={produto.id}
                 nome = {produto.name}
                 valor={produto.price}
                 imagem={produto.image}
                 descricao={produto.description}
-                cores={produto.colors.map((cor) => ({ cor: cor.displayName, imagem: cor.image }))}
-                tamanhos={produto.sizes.map((tamanho) => tamanho.displayName)}
+                cores={produto.colors.map((cor) => ({ id: cor.id, cor: cor.displayName, imagem: cor.image }))}
+                tamanhos={produto.sizes.map((tamanho) => ({ id: tamanho.id, tamanho: tamanho.displayName }))}
                 />
            ))}
         </section>

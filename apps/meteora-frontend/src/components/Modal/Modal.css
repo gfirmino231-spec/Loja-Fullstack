@@ -167,6 +167,12 @@
     color: white;
 }
 
+.Modal-erro {
+    color: #C0392B;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
 .botao-sacola {
     background-color: #9353FF;
     color: white;

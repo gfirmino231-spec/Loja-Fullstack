@@ -2,6 +2,7 @@ import './Navbar.css'
 import logo from '../../assets/image.png'
 import { useAuth } from '../Context/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import Cart from '../Cart/Cart'
 
 
 function Navbar() {
@@ -27,6 +28,7 @@ function Navbar() {
                 </button>
             </div>
             <div className='conjunto-direita'>
+                <Cart />
                 {estaLogado ? (
                     <>
                         <span className='usuario-email'>{email}</span>

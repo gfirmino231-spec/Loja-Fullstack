@@ -4,15 +4,16 @@ import Modal from '../Modal/Modal'
 
 
 interface ProdutoCardProps {
+    id: string,
     nome: string,
     imagem: string,
     valor: number,
     descricao: string,
-    cores: { cor: string, imagem: string }[]
-    tamanhos: string[]
+    cores: { id: string, cor: string, imagem: string }[]
+    tamanhos: { id: string, tamanho: string }[]
 }
 
-function ProdutoCard({ nome, imagem, valor, descricao, cores, tamanhos }: ProdutoCardProps) {
+function ProdutoCard({ id, nome, imagem, valor, descricao, cores, tamanhos }: ProdutoCardProps) {
 
     const [modalAberto, setModalAberto] = useState(false)
 
@@ -36,6 +37,7 @@ function ProdutoCard({ nome, imagem, valor, descricao, cores, tamanhos }: Produt
                 <button onClick={() => setModalAberto(true)} className='botao-produto'>Ver Mais</button>
                 {modalAberto && (
                     <Modal
+                        id={id}
                         nome={nome}
                         imagem={imagem}
                         valor={valor}

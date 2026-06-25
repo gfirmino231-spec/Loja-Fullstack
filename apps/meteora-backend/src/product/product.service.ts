@@ -23,6 +23,7 @@ export class ProductService {
     const productSizes = await this.prisma.productSize.findMany({
       where: { productId },
       include: { size: true },
+      orderBy: { id: 'asc' },
     });
     return productSizes.map((productSize) => productSize.size);
   }
@@ -31,6 +32,7 @@ export class ProductService {
     const productColors = await this.prisma.productColor.findMany({
       where: { productId },
       include: { color: true },
+      orderBy: { id: 'asc' },
     });
     return productColors.map((productColor) => ({
       ...productColor.color,

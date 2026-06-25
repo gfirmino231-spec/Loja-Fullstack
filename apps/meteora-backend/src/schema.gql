@@ -36,7 +36,25 @@ type Product {
   colors: [Color!]!
 }
 
+type User {
+  id: ID!
+  email: String!
+}
+
 type Query {
   categories: [Category!]!
   products(page: Int, limit: Int): [Product!]!
+}
+
+type Mutation {
+  register(email: String!, password: String!): User!
+  login(email: String!, password: String!): User!
+  finalizarCompra(itens: [ItemCompraInput!]!): Boolean!
+}
+
+input ItemCompraInput {
+  productId: Int!
+  colorId: Int!
+  sizeId: Int!
+  quantidade: Int!
 }

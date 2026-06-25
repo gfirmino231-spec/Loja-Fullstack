@@ -41,6 +41,9 @@ model ProductColor {
   color     Color   @relation(fields: [colorId], references: [id])
   colorId   Int
   image     String
+  stock     Int     @default(50)
+
+  @@unique([productId, colorId])
 }
 
 model Size {
@@ -55,6 +58,9 @@ model ProductSize {
   productId Int
   size      Size    @relation(fields: [sizeId], references: [id])
   sizeId    Int
+  stock     Int     @default(50)
+
+  @@unique([productId, sizeId])
 }
 
 model Category {
@@ -62,4 +68,11 @@ model Category {
   displayName String    @unique
   icon        String
   products    Product[]
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
 }

@@ -1,20 +1,28 @@
 import { useState } from 'react'
 import checkcircle from '../../assets/check-circle.png'
 import iconefechar from '../../assets/icone-fechar.png'
+import { useCart } from '../Context/CartContext'
 import './Modal.css'
 
 interface Cor {
+    id: string
     cor: string
     imagem: string
 }
 
+interface Tamanho {
+    id: string
+    tamanho: string
+}
+
 interface ModalProps {
+    id: string
     nome: string
     imagem: string
     valor: number
     descricao: string
     cores: Cor[]
-    tamanhos: string[]
+    tamanhos: Tamanho[]
     onFechar: () => void
 }
 
@@ -40,9 +48,32 @@ function corParaHex(nome: string): string {
     return CORES_HEX[nome.toLowerCase()] ?? '#9CA3AF'
 }
 
-function Modal({ nome, imagem, valor, descricao, cores, tamanhos, onFechar }: ModalProps) {
+function Modal({ id, nome, imagem, valor, descricao, cores, tamanhos, onFechar }: ModalProps) {
     const [corSelecionada, setCorSelecionada] = useState(0)
-    const [tamanhoSelecionado, setTamanhoSelecionado] = useState('')
+    const [tamanhoSelecionadoId, setTamanhoSelecionadoId] = useState('')
+    const [erro, setErro] = useState('')
+    const { adicionarItem } = useCart()
+
+    function lidarComAdicionarSacola() {
+        if (!tamanhoSelecionadoId) {
+            setErro('Selecione um tamanho antes de adicionar à sacola.')
+            return
+        }
+
+        const tamanhoEscolhido = tamanhos.find((item) => item.id === tamanhoSelecionadoId)!
+
+        adicionarItem({
+            produtoId: id,
+            nome,
+            imagem: cores[corSelecionada].imagem,
+            valor,
+            cor: cores[corSelecionada].cor,
+            corId: cores[corSelecionada].id,
+            tamanho: tamanhoEscolhido.tamanho,
+            tamanhoId: tamanhoEscolhido.id,
+        })
+        onFechar()
+    }
 
     return (
         <div className='overlay'>
@@ -87,18 +118,22 @@ function Modal({ nome, imagem, valor, descricao, cores, tamanhos, onFechar }: Mo
                         <div className='tamanhos'>
                             <p>Tamanho:</p>
                             <div className='tamanhos-opcoes'>
-                                {tamanhos.map((tamanho) => (
+                                {tamanhos.map((item) => (
                                     <button
-                                        key={tamanho}
-                                        className={`tamanho-btn ${tamanhoSelecionado === tamanho ? 'selecionado' : ''}`}
-                                        onClick={() => setTamanhoSelecionado(tamanho)}
+                                        key={item.id}
+                                        className={`tamanho-btn ${tamanhoSelecionadoId === item.id ? 'selecionado' : ''}`}
+                                        onClick={() => {
+                                            setTamanhoSelecionadoId(item.id)
+                                            setErro('')
+                                        }}
                                     >
-                                        {tamanho}
+                                        {item.tamanho}
                                     </button>
                                 ))}
                             </div>
                         </div>
-                        <button className='botao-sacola'>Adicionar à sacola</button>
+                        {erro && <p className='Modal-erro'>{erro}</p>}
+                        <button className='botao-sacola' onClick={lidarComAdicionarSacola}>Adicionar à sacola</button>
                     </div>
                 </div>
             </div>
