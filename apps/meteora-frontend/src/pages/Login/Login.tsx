@@ -1,17 +1,20 @@
 import { useAuth } from "../../components/Context/AuthContext"
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
+import { useMutation } from "@apollo/client"
+import { LOGIN } from "../../graphql/mutations/usuario"
 import './Login.css'
 
 function Login() {
     const { fazerLogin } = useAuth()
     const navigate = useNavigate()
+    const [login, { loading }] = useMutation(LOGIN)
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [mostrarSenha, setMostrarSenha] = useState(false)
     const [erro, setErro] = useState('')
 
-    function handleLogin(e: React.FormEvent) {
+    async function handleLogin(e: React.FormEvent) {
         e.preventDefault()
 
         if (!email || !senha) {
@@ -20,8 +23,13 @@ function Login() {
         }
 
         setErro('')
-        fazerLogin(email)
-        navigate('/')
+        try {
+            await login({ variables: { email, password: senha } })
+            fazerLogin(email)
+            navigate('/')
+        } catch (err) {
+            setErro(err instanceof Error ? err.message : 'Não foi possível entrar. Tente novamente.')
+        }
     }
 
     return (
@@ -91,7 +99,9 @@ function Login() {
 
                         {erro && <p className='auth-erro'>{erro}</p>}
 
-                        <button type='submit' className='auth-botao'>Entrar</button>
+                        <button type='submit' className='auth-botao' disabled={loading}>
+                            {loading ? 'Entrando...' : 'Entrar'}
+                        </button>
                     </form>
 
                     <hr className='auth-divisor' />

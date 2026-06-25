@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { useAuth } from '../../components/Context/AuthContext'
 import { useNavigate, Link } from 'react-router-dom'
+import { useMutation } from '@apollo/client'
+import { REGISTER } from '../../graphql/mutations/usuario'
 import './Cadastro.css'
 
 function Cadastro() {
     const { fazerLogin } = useAuth()
     const navigate = useNavigate()
+    const [registrar, { loading }] = useMutation(REGISTER)
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const [confirmarSenha, setConfirmarSenha] = useState('')
@@ -13,7 +16,7 @@ function Cadastro() {
     const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false)
     const [erro, setErro] = useState('')
 
-    function handleCadastro(e: React.FormEvent) {
+    async function handleCadastro(e: React.FormEvent) {
         e.preventDefault()
 
         if (!email || !senha || !confirmarSenha) {
@@ -27,8 +30,13 @@ function Cadastro() {
         }
 
         setErro('')
-        fazerLogin(email)
-        navigate('/')
+        try {
+            await registrar({ variables: { email, password: senha } })
+            fazerLogin(email)
+            navigate('/')
+        } catch (err) {
+            setErro(err instanceof Error ? err.message : 'Não foi possível concluir o cadastro. Tente novamente.')
+        }
     }
 
     return (
@@ -130,7 +138,9 @@ function Cadastro() {
 
                         {erro && <p className='auth-erro'>{erro}</p>}
 
-                        <button type='submit' className='auth-botao'>Cadastrar</button>
+                        <button type='submit' className='auth-botao' disabled={loading}>
+                            {loading ? 'Cadastrando...' : 'Cadastrar'}
+                        </button>
                     </form>
 
                     <hr className='auth-divisor' />
