@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client'
 import Navbar from '../../components/Navbar/Navbar'
 import { useCart } from '../../components/Context/CartContext'
 import { FINALIZAR_COMPRA } from '../../graphql/mutations/checkout'
+import { GET_PRODUCTS } from '../../graphql/queries/produto'
 import './Pagamento.css'
 
 function formatarMoeda(valor: number): string {
@@ -13,7 +14,10 @@ function formatarMoeda(valor: number): string {
 function Pagamento() {
     const { itens, total, limparCarrinho } = useCart()
     const navigate = useNavigate()
-    const [finalizarCompra, { loading }] = useMutation(FINALIZAR_COMPRA)
+    const [finalizarCompra, { loading }] = useMutation(FINALIZAR_COMPRA, {
+        refetchQueries: [{ query: GET_PRODUCTS }],
+        awaitRefetchQueries: true,
+    })
     const [erro, setErro] = useState('')
     const [compraFinalizada, setCompraFinalizada] = useState(false)
 
