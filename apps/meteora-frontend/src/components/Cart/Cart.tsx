@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../Context/CartContext'
+import { formatarMoeda } from '../../utils/formatarMoeda'
 import './Cart.css'
-
-function formatarMoeda(valor: number): string {
-    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)
-}
 
 function Cart() {
     const [aberto, setAberto] = useState(false)

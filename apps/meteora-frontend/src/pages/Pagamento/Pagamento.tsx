@@ -5,11 +5,8 @@ import Navbar from '../../components/Navbar/Navbar'
 import { useCart } from '../../components/Context/CartContext'
 import { FINALIZAR_COMPRA } from '../../graphql/mutations/checkout'
 import { GET_PRODUCTS } from '../../graphql/queries/produto'
+import { formatarMoeda } from '../../utils/formatarMoeda'
 import './Pagamento.css'
-
-function formatarMoeda(valor: number): string {
-    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor)
-}
 
 function Pagamento() {
     const { itens, total, limparCarrinho } = useCart()

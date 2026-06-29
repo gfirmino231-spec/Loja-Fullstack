@@ -2,6 +2,7 @@ import { useState } from 'react'
 import checkcircle from '../../assets/check-circle.png'
 import iconefechar from '../../assets/icone-fechar.png'
 import { useCart } from '../Context/CartContext'
+import { formatarMoeda } from '../../utils/formatarMoeda'
 import './Modal.css'
 
 interface Cor {
@@ -20,7 +21,6 @@ interface Tamanho {
 interface ModalProps {
     id: string
     nome: string
-    imagem: string
     valor: number
     descricao: string
     cores: Cor[]
@@ -50,7 +50,7 @@ function corParaHex(nome: string): string {
     return CORES_HEX[nome.toLowerCase()] ?? '#9CA3AF'
 }
 
-function Modal({ id, nome, imagem, valor, descricao, cores, tamanhos, onFechar }: ModalProps) {
+function Modal({ id, nome, valor, descricao, cores, tamanhos, onFechar }: ModalProps) {
     const [corSelecionada, setCorSelecionada] = useState(() => {
         const indiceDisponivel = cores.findIndex((item) => item.estoque > 0)
         return indiceDisponivel === -1 ? 0 : indiceDisponivel
@@ -107,10 +107,7 @@ function Modal({ id, nome, imagem, valor, descricao, cores, tamanhos, onFechar }
                         <p className='Modal-descricao'>{descricao}</p>
                         <div className='Modal-preco'>
                             <strong>
-                                {new Intl.NumberFormat('pt-BR', {
-                                    style: 'currency',
-                                    currency: 'BRL'
-                                }).format(valor)}
+                                {formatarMoeda(valor)}
                             </strong>
                             <span className='Modal-vendedor'>Vendido e entregue por Riachuelo</span>
                         </div>

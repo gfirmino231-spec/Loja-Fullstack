@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './ProdutoCard.css'
 import Modal from '../Modal/Modal'
+import { formatarMoeda } from '../../utils/formatarMoeda'
 
 
 interface ProdutoCardProps {
@@ -27,10 +28,7 @@ function ProdutoCard({ id, nome, imagem, valor, descricao, cores, tamanhos }: Pr
                 <p className='descricao-produto'> {descricao}</p>
                 <p className='valor-produto' >
                     <strong>
-                        {new Intl.NumberFormat('pt-BR', {
-                            style: 'currency',
-                            currency: 'BRL'
-                        }).format(valor)}
+                        {formatarMoeda(valor)}
                     </strong>
 
                 </p>
@@ -39,7 +37,6 @@ function ProdutoCard({ id, nome, imagem, valor, descricao, cores, tamanhos }: Pr
                     <Modal
                         id={id}
                         nome={nome}
-                        imagem={imagem}
                         valor={valor}
                         descricao={descricao}
                         onFechar={() => setModalAberto(false)}
